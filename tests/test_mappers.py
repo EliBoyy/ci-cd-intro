@@ -1,4 +1,7 @@
-from app.mappers import convert_to_square_matrix, convert_route_to_positions
+from app.mappers import (
+    convert_to_square_matrix,
+    convert_route_to_positions
+)
 from app.schema import TspSolverInput, Position
 
 
