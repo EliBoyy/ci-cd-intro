@@ -1,7 +1,5 @@
 import pytest
-
 from app.tsp import tsp_bruteforce
-
 
 def test_triangle():
     dist = [
@@ -10,10 +8,9 @@ def test_triangle():
         [2, 3, 0],
     ]
     cost, route, optimal = tsp_bruteforce(dist)
-    assert cost == 1 + 2 + 3  # 1→2→3→1
+    assert cost == 1 + 2 + 3
     assert set(route) == {0, 1, 2}
     assert optimal == True
-
 
 def test_square_symmetric():
     dist = [
@@ -23,8 +20,7 @@ def test_square_symmetric():
         [1, 2, 1, 0],
     ]
     cost, _, _ = tsp_bruteforce(dist)
-    assert cost == 1 + 1 + 1 + 1  # perfekte 4er Runde
-
+    assert cost == 1 + 1 + 1 + 1
 
 def test_identity_graph():
     dist = [
@@ -35,7 +31,6 @@ def test_identity_graph():
     assert cost == 10
     assert set(route) == {0, 1}
 
-
 @pytest.mark.timeout(10)
 def test_timeout():
     dist = [
@@ -43,3 +38,6 @@ def test_timeout():
     ]
     _, _, optimal = tsp_bruteforce(dist, timeout=1)
     assert optimal == False
+
+def test_intentional_fail():
+    assert False
