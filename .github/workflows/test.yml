@@ -5,6 +5,9 @@ on:
     branches:
       - main
       - feature-test
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
@@ -26,3 +29,25 @@ jobs:
       - name: Run tests
         run: |
           pytest
+
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install flake8
+        run: |
+          pip install flake8
+
+      - name: Run flake8 linter
+        run: |
+          flake8 .
+
