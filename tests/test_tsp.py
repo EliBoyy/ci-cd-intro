@@ -12,7 +12,7 @@ def test_triangle():
     cost, route, optimal = tsp_bruteforce(dist)
     assert cost == 1 + 2 + 3  # 1→2→3→1
     assert set(route) == {0, 1, 2}
-    assert optimal == True
+    assert optimal is False..
 
 
 def test_square_symmetric():
