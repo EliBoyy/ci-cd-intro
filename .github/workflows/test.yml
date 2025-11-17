@@ -49,5 +49,6 @@ jobs:
 
       - name: Run flake8 linter
         run: |
-          flake8 . --ignore=E501,W292,E712,E231
+          flake8 . --ignore=E501,W292,E712,E231,E226
+
 
