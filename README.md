@@ -12,7 +12,7 @@ You can place points on an interactive map, submit them to the backend, and rece
 pip install -r requirements.txt
 ```
 ### 2) Start the backend
-`uvicorn app.main:app --reload`
+`uvicorn app.main:app --reload`.....
 ### 3) Open the UI
 Navigate to http://localhost:8000/
 ### API docs
